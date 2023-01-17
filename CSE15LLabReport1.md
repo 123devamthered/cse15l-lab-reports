@@ -11,4 +11,3 @@ After connecting to a remote server, you should try out some commands on the rem
 <img width="638" alt="D24FCB8B-60D0-40C9-A4A5-D22F1FEE7971" src="https://user-images.githubusercontent.com/122566208/212815234-9b59f1d9-6b9d-40c6-a2b2-5e0d880ab987.png">
 
 The commands that I used are the "pwd" and "ls -a" commands. The pwd command, which stands for "print working directory" gives the absolote path of the directory that the user is currently in. The ls -a command lists all the files in the directory including the archives.
-
