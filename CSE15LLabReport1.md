@@ -1,10 +1,13 @@
 This is my week 1 lab report for CSE 15L. In this lab report, I will be describing the neccesary steps to log into a course-specific account on ieng6. The first step towards creating a course-specific account would be installing VScode on your device. Since my device already had VScode installed on it, I didn't install VScode in order to create my course-specific account. However, in order to install VScode on your device, you would need to visit the Visual Studio Code website at  https://code.visualstudio.com/. After clicking on the "Download" option available on the top right hand side of your screen, you should see the following webpage.
-
+<img width="1437" alt="72C738B8-B888-4A79-A4A3-24145B743F86" src="https://user-images.githubusercontent.com/122566208/212813890-5b7308f8-a0d3-4bbe-b356-30637791df1e.png">
 This webpage possesses VScode download options for different types of operating systems. Choose the download option relevant to the operating system on your device. After downloading VScode and opening it, you should see a window that looks like this.
+<img width="638" alt="7BDF1CFC-F99B-430A-9A41-FDB5FB83C607" src="https://user-images.githubusercontent.com/122566208/212814461-41764d94-bd49-479f-ac41-50a2cd827960.png">
 
 Next, after installing VScode on your device, you will need to remotely connect to a server. This can be accomplished by opening a terminal on VScode using the "Ctrl or Command + '" command on your device. After opening up a terminal on VScode, you will need to type the command "ssh cs15lwi23dd@ieng6.ucsd.edu" where the "dd" will be replaced by the letters in your course-specific account.
 After entering that command into the terminal, you will be asked if you want to continue connecting to the server since this is probably your first time connecting to that server. After typing "yes" to the message, you will be asked to enter your password in order to connect to the server. After entering your password, you will be logged into the remote server and your terminal should display the following message.
+<img width="635" alt="76A45B4C-87D8-4D30-B891-608EC8FB73B1" src="https://user-images.githubusercontent.com/122566208/212814860-e251b426-69b0-42ec-8183-c7124a4a9907.png">
 
 After connecting to a remote server, you should try out some commands on the remote server and on your own computer. The image belows gives an example of trying out some commands on the remote server. 
+<img width="638" alt="D24FCB8B-60D0-40C9-A4A5-D22F1FEE7971" src="https://user-images.githubusercontent.com/122566208/212815234-9b59f1d9-6b9d-40c6-a2b2-5e0d880ab987.png">
 
-The commands that I used are the "pwd" and "ls -a" commands. The pwd command, which stands for "print working directory" gives the absolote path of the directory that the user is currently in. The 
+The commands that I used are the "pwd" and "ls -a" commands. The pwd command, which stands for "print working directory" gives the absolote path of the directory that the user is currently in. The ls -a command lists all the files in the directory including the archives.
