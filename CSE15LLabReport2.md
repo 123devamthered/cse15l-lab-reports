@@ -10,3 +10,42 @@ In the image above, the handleRequest method inside class Handler is called. The
 In the image above, the handleRequest method imside the Handler class is called again. The argument to the method is going to be the URL "http://localhost:5000/add-message?s=What%20is%20your%20name?". The value of yum is going to be "Hello" since that was what the last modification of yum left us with. However, after running the request shown in the image above, the value of yum will change from "Hello" to "Hello" and then "What is your name?" in the new line.
 
 Part 2:
+In this part of the lab report, I will pick a bug from the starter code provided to us for lab 3. After that, I will provide some inputs for and symptoms of the buggy program before explaining the code change required to fix the program. So, let's consider the reversed method in the ArrayExamples class which takes an array of integers as input and returns a new array with all the elements of the input array in reversed order. On testing the method as the JUnit test provided in the code block below, we get the wrong output.
+```
+@Test
+  public void testReversed1() {
+    int[] input2 = {34, 56, 89, 100};
+    assertArrayEquals(new int[]{100, 89, 56, 34}, ArrayExamples.reversed(input2));
+  }
+```
+The test above takes in the input array {34, 56, 89, 100} and, according to the way the method reversed is supposed to work, should return a new array {100, 89, 56, 34}. However, on running the test above we do not get the expected output. 
+```
+ @Test
+  public void testReversed() {
+    int[] input1 = { };
+    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+  }
+```
+However, in contrast to testReversed1(), testReversed(), the test shown in the code block above, works perfectly well and produces the output we expect it to produce. The image below serves as the symptom of the bug for the method reversed.
+![image](https://user-images.githubusercontent.com/122566208/215669236-1f9cfed3-2f37-4af2-a025-58c88e508dfc.png)
+In order to fix the bug, we have to change the reversed method from its original state, shown in the code block below.
+```
+ static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = newArray[arr.length - i - 1];
+    }
+    return arr;
+  }
+```
+From this original state, we change the method into the code block shown below in order to fix the bug.
+```
+static int[] reversed(int[] arr) {
+    int[] newArray = new int[arr.length];
+    for(int i = 0; i < arr.length; i += 1) {
+      newArray[i] = arr[arr.length - i - 1];
+    }
+    return newArray;
+  }
+```
+
