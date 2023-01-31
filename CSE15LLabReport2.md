@@ -48,4 +48,7 @@ static int[] reversed(int[] arr) {
     return newArray;
   }
 ```
+So, in order to fix the bug, we have to change a couple of things in the original code block. Firstly, the original code block, instead of modifying the elements of the new array while looping through them, modifies the elements of the input array while looping through them instead. In order to fix this, change the for loop so that it iterates through and modifies the elements of the new array. Secondly, the original code block returns the input array instead of returning a new array as the method is supposed to. Therefore, we change the return statement of the method so that it returns a new array instead of the input array. By making these changes, we are able to fix the reversed method in ArrayExamples.java
 
+Part 3:
+In the final part of this lab report, I will describe something that I learned over the course of the last few labs that I didn't know before. Over the course of the last 2 labs, I learned how to create and set up a web server of my own, which is something I didn't know how to do before. I feel that this is a very exciting skill for me to learn because I have always wanted to create websites and web pages of my own. After learning this skill, I really want to learn even more about developing web pages and setting up servers because not only have I been very interested in doing so as I mentioned above but also because I think it is an essential and useful skill to possess in the modern world.
