@@ -1,1 +1,460 @@
-This is my lab report 3 for CSE 15L. 
+This is my lab report 3 for CSE 15L. In this lab report, I will describe and explain the behavior of 4 different command-line options for the command "find". In addition to that, I will give 2 examples each of using those options on the files and directories in the directory "./written_2" in order to illustrate and explain how those commands work.
+
+1.) "name" command line option
+
+The "name" command line option can be used to find a file with a specific name in a directory. An example of this sort of behavior is exhibited in the code block below, in which the command line option "name" is used to find a file named "Cuba-History.txt" within the directory "./written_2".
+```
+devamderasary@DEVAMs-MBP docsearch % find written_2/ -name Cuba-History.txt
+written_2//travel_guides/berlitz2/Cuba-History.txt
+```
+As seen in the example above, the terminal prints out the path of the file named "Cuba-History.txt" upon running the "name" command. The same "name" command can be used to delete a file with confirmation inside a directory, as seen in the example below.
+```
+devamderasary@DEVAMs-MBP docsearch % find written_2/ -name Bahamas-History.txt -exec rm -i {} \;
+remove written_2//travel_guides/berlitz2/Bahamas-History.txt? y
+```
+In the example above, the "name" command is used to find a file with the name "Bahamas-History.txt" inside the directory "./written_2" and then, after running the command, the terminal asks the user for confirmation regarding the deletion of the aforementioned file. Upon entering "y/Y" the file gets deleted from the directory.
+URL of source- https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
+
+2.) "empty" command line option
+
+The "empty" command line option is used to find empty files or folders inside the directory or sub-directories. An example of using this command line option is shown in the code block below, where "empty" is used to find all the empty files and folders in the directory "./written_2".
+```
+devamderasary@DEVAMs-MBP docsearch % find written_2/ -empty
+devamderasary@DEVAMs-MBP docsearch % 
+```
+As the example above shows, there are no empty files or folders inside the directory "./written_2". The same command line option can also be used to find empty files or folders within subdirectories of the original directory too, as illustrated in the code block below.
+```
+devamderasary@DEVAMs-MBP docsearch % find ./written_2//travel_guides -empty
+devamderasary@DEVAMs-MBP docsearch % 
+```
+In the example above, the "empty" command line option is used to obtain the empty files or folders within the subdirectory "travel_guides" contained in the directory "./written_2".
+URL of source- https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
+
+3.) "ls" command line option
+
+The "ls" command line option serches the contents of a directory recursively, as seen in the example below where the "ls" option is used to search the contents of the subdirectory "travel_guides".
+```
+devamderasary@DEVAMs-MBP docsearch % find ./written_2//travel_guides -ls
+10265426        0 drwxr-xr-x    4 devamderasary    staff                 128 12 Feb 21:39 ./written_2//travel_guides
+10265427        0 drwxr-xr-x  103 devamderasary    staff                3296 12 Feb 21:39 ./written_2//travel_guides/berlitz1
+10265436        8 -rwxr-xr-x    1 devamderasary    staff                1547 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRLasVegas.txt
+10265456       88 -rwxr-xr-x    1 devamderasary    staff               41789 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryJapan.txt
+10265484       24 -rwxr-xr-x    1 devamderasary    staff                8528 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroMalaysia.txt
+10265432        8 -rwxr-xr-x    1 devamderasary    staff                 931 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRIstanbul.txt
+10265455       40 -rwxr-xr-x    1 devamderasary    staff               17168 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryJamaica.txt
+10265433       56 -rwxr-xr-x    1 devamderasary    staff               25434 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRJamaica.txt
+10265429        8 -rwxr-xr-x    1 devamderasary    staff                1193 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRHongKong.txt
+10265444       40 -rwxr-xr-x    1 devamderasary    staff               18298 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryEgypt.txt
+10265465       24 -rwxr-xr-x    1 devamderasary    staff                9427 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroEdinburgh.txt
+10265452       40 -rwxr-xr-x    1 devamderasary    staff               16573 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryIsrael.txt
+10265464       16 -rwxr-xr-x    1 devamderasary    staff                7820 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroDublin.txt
+10265451      112 -rwxr-xr-x    1 devamderasary    staff               54898 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryIndia.txt
+10265468       24 -rwxr-xr-x    1 devamderasary    staff               11010 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroFrance.txt
+10265482       24 -rwxr-xr-x    1 devamderasary    staff                9927 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroMadeira.txt
+10265502       48 -rwxr-xr-x    1 devamderasary    staff               21180 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToLakeDistrict.txt
+10265471       16 -rwxr-xr-x    1 devamderasary    staff                6210 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroIbiza.txt
+10265454       96 -rwxr-xr-x    1 devamderasary    staff               48191 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryItaly.txt
+10265513      160 -rwxr-xr-x    1 devamderasary    staff               80111 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToGreek.txt
+10265523      168 -rwxr-xr-x    1 devamderasary    staff               84671 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToLakeDistrict.txt
+10265442       32 -rwxr-xr-x    1 devamderasary    staff               15962 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryDublin.txt
+10265473       16 -rwxr-xr-x    1 devamderasary    staff                5318 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroIsrael.txt
+10265495       80 -rwxr-xr-x    1 devamderasary    staff               38183 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToIbiza.txt
+10265446       80 -rwxr-xr-x    1 devamderasary    staff               38509 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryFrance.txt
+10265493        8 -rwxr-xr-x    1 devamderasary    staff                2477 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToHawaii.txt
+10265463       32 -rwxr-xr-x    1 devamderasary    staff               13730 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryMallorca.txt
+10265457       40 -rwxr-xr-x    1 devamderasary    staff               18491 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryJerusalem.txt
+10265437        8 -rwxr-xr-x    1 devamderasary    staff                1067 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRLisbon.txt
+10265517      344 -rwxr-xr-x    1 devamderasary    staff              172986 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToIndia.txt
+10265461       32 -rwxr-xr-x    1 devamderasary    staff               12519 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryMadrid.txt
+10265449       32 -rwxr-xr-x    1 devamderasary    staff               14614 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryHongKong.txt
+10265483       24 -rwxr-xr-x    1 devamderasary    staff               11562 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroMadrid.txt
+10265481       16 -rwxr-xr-x    1 devamderasary    staff                6323 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroLosAngeles.txt
+10265453       56 -rwxr-xr-x    1 devamderasary    staff               27099 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryIstanbul.txt
+10265520      576 -rwxr-xr-x    1 devamderasary    staff              294602 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToItaly.txt
+10265459       40 -rwxr-xr-x    1 devamderasary    staff               18968 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryLasVegas.txt
+10265447       40 -rwxr-xr-x    1 devamderasary    staff               18666 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryGreek.txt
+10265441        8 -rwxr-xr-x    1 devamderasary    staff                1445 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRMallorca.txt
+10265486       16 -rwxr-xr-x    1 devamderasary    staff                6818 12 Feb 21:39 ./written_2//travel_guides/berlitz1/JungleMalaysia.txt
+10265505       56 -rwxr-xr-x    1 devamderasary    staff               28497 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToMadeira.txt
+10265490       56 -rwxr-xr-x    1 devamderasary    staff               26623 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToFWI.txt
+10265527      360 -rwxr-xr-x    1 devamderasary    staff              180940 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToMalaysia.txt
+10265506       48 -rwxr-xr-x    1 devamderasary    staff               23497 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToMalaysia.txt
+10265487       48 -rwxr-xr-x    1 devamderasary    staff               20985 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToDublin.txt
+10265521      376 -rwxr-xr-x    1 devamderasary    staff              189061 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToJapan.txt
+10265448       40 -rwxr-xr-x    1 devamderasary    staff               16522 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryHawaii.txt
+10265491        8 -rwxr-xr-x    1 devamderasary    staff                2324 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToFrance.txt
+10265510      168 -rwxr-xr-x    1 devamderasary    staff               85505 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToEgypt.txt
+10265509      160 -rwxr-xr-x    1 devamderasary    staff               79007 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToEdinburgh.txt
+10265497       48 -rwxr-xr-x    1 devamderasary    staff               21343 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToIsrael.txt
+10265438        8 -rwxr-xr-x    1 devamderasary    staff                1254 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRLosAngeles.txt
+10265460       24 -rwxr-xr-x    1 devamderasary    staff               11857 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryMadeira.txt
+10265478       24 -rwxr-xr-x    1 devamderasary    staff               10132 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroJerusalem.txt
+10265439        8 -rwxr-xr-x    1 devamderasary    staff                1433 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRMadeira.txt
+10265518      168 -rwxr-xr-x    1 devamderasary    staff               84424 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToIsrael.txt
+10265430        8 -rwxr-xr-x    1 devamderasary    staff                 675 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRIbiza.txt
+10265512      504 -rwxr-xr-x    1 devamderasary    staff              253959 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToFrance.txt
+10265508      176 -rwxr-xr-x    1 devamderasary    staff               87384 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToDublin.txt
+10265480       24 -rwxr-xr-x    1 devamderasary    staff               11886 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroLasVegas.txt
+10265474       16 -rwxr-xr-x    1 devamderasary    staff                7212 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroIstanbul.txt
+10265528      152 -rwxr-xr-x    1 devamderasary    staff               74270 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToMallorca.txt
+10265507       40 -rwxr-xr-x    1 devamderasary    staff               17417 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToMallorca.txt
+10265470       16 -rwxr-xr-x    1 devamderasary    staff                5784 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroHongKong.txt
+10265467       16 -rwxr-xr-x    1 devamderasary    staff                7684 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroFWI.txt
+10265476       24 -rwxr-xr-x    1 devamderasary    staff               10468 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroJamaica.txt
+10265469       24 -rwxr-xr-x    1 devamderasary    staff                8323 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroGreek.txt
+10265431       56 -rwxr-xr-x    1 devamderasary    staff               25689 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRIsrael.txt
+10265488       48 -rwxr-xr-x    1 devamderasary    staff               21152 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToEdinburgh.txt
+10265525      128 -rwxr-xr-x    1 devamderasary    staff               65176 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToMadeira.txt
+10265492       40 -rwxr-xr-x    1 devamderasary    staff               18503 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToGreek.txt
+10265435        8 -rwxr-xr-x    1 devamderasary    staff                1528 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRLakeDistrict.txt
+10265516       88 -rwxr-xr-x    1 devamderasary    staff               42155 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToIbiza.txt
+10265514        8 -rwxr-xr-x    1 devamderasary    staff                2309 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToHawaii.txt
+10265440       32 -rwxr-xr-x    1 devamderasary    staff               14092 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRMadrid.txt
+10265462       72 -rwxr-xr-x    1 devamderasary    staff               35725 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryMalaysia.txt
+10265475       32 -rwxr-xr-x    1 devamderasary    staff               12345 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroItaly.txt
+10265496       40 -rwxr-xr-x    1 devamderasary    staff               18898 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToIndia.txt
+10265524      160 -rwxr-xr-x    1 devamderasary    staff               77840 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToLosAngeles.txt
+10265434        8 -rwxr-xr-x    1 devamderasary    staff                1446 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRJerusalem.txt
+10265450       32 -rwxr-xr-x    1 devamderasary    staff               12703 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryIbiza.txt
+10265443       48 -rwxr-xr-x    1 devamderasary    staff               21027 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryEdinburgh.txt
+10265445       32 -rwxr-xr-x    1 devamderasary    staff               15011 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryFWI.txt
+10265472       56 -rwxr-xr-x    1 devamderasary    staff               26436 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroIndia.txt
+10265499       48 -rwxr-xr-x    1 devamderasary    staff               22430 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToItaly.txt
+10265458       32 -rwxr-xr-x    1 devamderasary    staff               13596 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HistoryLakeDistrict.txt
+10265526      160 -rwxr-xr-x    1 devamderasary    staff               78028 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToMadrid.txt
+10265522      152 -rwxr-xr-x    1 devamderasary    staff               76530 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToJerusalem.txt
+10265466       16 -rwxr-xr-x    1 devamderasary    staff                7989 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroEgypt.txt
+10265428       32 -rwxr-xr-x    1 devamderasary    staff               16271 12 Feb 21:39 ./written_2//travel_guides/berlitz1/HandRHawaii.txt
+10265501       72 -rwxr-xr-x    1 devamderasary    staff               35438 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToJapan.txt
+10265500      176 -rwxr-xr-x    1 devamderasary    staff               86290 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToJamaica.txt
+10265479       24 -rwxr-xr-x    1 devamderasary    staff               11857 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroLakeDistrict.txt
+10265485       24 -rwxr-xr-x    1 devamderasary    staff                9291 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroMallorca.txt
+10265494       56 -rwxr-xr-x    1 devamderasary    staff               24756 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToHongKong.txt
+10265489       48 -rwxr-xr-x    1 devamderasary    staff               21659 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToEgypt.txt
+10265515      136 -rwxr-xr-x    1 devamderasary    staff               67601 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToHongKong.txt
+10265511      128 -rwxr-xr-x    1 devamderasary    staff               64916 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToFWI.txt
+10265498       56 -rwxr-xr-x    1 devamderasary    staff               26999 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToIstanbul.txt
+10265519      176 -rwxr-xr-x    1 devamderasary    staff               88932 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhereToIstanbul.txt
+10265477       40 -rwxr-xr-x    1 devamderasary    staff               19138 12 Feb 21:39 ./written_2//travel_guides/berlitz1/IntroJapan.txt
+10265503       96 -rwxr-xr-x    1 devamderasary    staff               48170 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToLasVegas.txt
+10265504       48 -rwxr-xr-x    1 devamderasary    staff               24076 12 Feb 21:39 ./written_2//travel_guides/berlitz1/WhatToLosAngeles.txt
+10265529        0 drwxr-xr-x   79 devamderasary    staff                2528 13 Feb 23:06 ./written_2//travel_guides/berlitz2
+10265599       32 -rwxr-xr-x    1 devamderasary    staff               14604 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Portugal-History.txt
+10265557      144 -rwxr-xr-x    1 devamderasary    staff               69890 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Berlin-WhereToGo.txt
+10265579       32 -rwxr-xr-x    1 devamderasary    staff               16143 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Costa-History.txt
+10265537      120 -rwxr-xr-x    1 devamderasary    staff               58911 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Amsterdam-WhereToGo.txt
+10265581      144 -rwxr-xr-x    1 devamderasary    staff               73708 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Costa-WhereToGo.txt
+10265536       32 -rwxr-xr-x    1 devamderasary    staff               16133 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Amsterdam-WhatToDo.txt
+10265583       64 -rwxr-xr-x    1 devamderasary    staff               30453 12 Feb 21:39 ./written_2//travel_guides/berlitz2/CostaBlanca-WhatToDo.txt
+10265549       32 -rwxr-xr-x    1 devamderasary    staff               13127 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Barcelona-History.txt
+10265601      240 -rwxr-xr-x    1 devamderasary    staff              119651 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Portugal-WhereToGo.txt
+10265561      144 -rwxr-xr-x    1 devamderasary    staff               73074 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Boston-WhereToGo.txt
+10265598       40 -rwxr-xr-x    1 devamderasary    staff               19408 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Poland-WhatToDo.txt
+10265567      144 -rwxr-xr-x    1 devamderasary    staff               73702 12 Feb 21:39 ./written_2//travel_guides/berlitz2/California-WhereToGo.txt
+10265589       40 -rwxr-xr-x    1 devamderasary    staff               17210 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Cuba-WhatToDo.txt
+10265555       48 -rwxr-xr-x    1 devamderasary    staff               22126 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Berlin-History.txt
+10265545      144 -rwxr-xr-x    1 devamderasary    staff               73435 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bahamas-WhereToGo.txt
+10265574       40 -rwxr-xr-x    1 devamderasary    staff               18673 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Cancun-WhatToDo.txt
+10265546       40 -rwxr-xr-x    1 devamderasary    staff               16431 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bali-History.txt
+10265586      160 -rwxr-xr-x    1 devamderasary    staff               81548 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Crete-WhereToGo.txt
+10265538       48 -rwxr-xr-x    1 devamderasary    staff               20481 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Athens-History.txt
+10265556       32 -rwxr-xr-x    1 devamderasary    staff               14688 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Berlin-WhatToDo.txt
+10265569      464 -rwxr-xr-x    1 devamderasary    staff              235947 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Canada-WhereToGo.txt
+10265548      160 -rwxr-xr-x    1 devamderasary    staff               78053 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bali-WhereToGo.txt
+10265564      144 -rwxr-xr-x    1 devamderasary    staff               73535 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Budapest-WhereoGo.txt
+10265551      144 -rwxr-xr-x    1 devamderasary    staff               72769 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Barcelona-WhereToGo.txt
+10265541      144 -rwxr-xr-x    1 devamderasary    staff               71349 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Athens-WhereToGo.txt
+10265596      144 -rwxr-xr-x    1 devamderasary    staff               73204 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Paris-WhereToGo.txt
+10265578      392 -rwxr-xr-x    1 devamderasary    staff              198080 12 Feb 21:39 ./written_2//travel_guides/berlitz2/China-WhereToGo.txt
+10265558       48 -rwxr-xr-x    1 devamderasary    staff               22386 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bermuda-WhatToDo.txt
+10265565       40 -rwxr-xr-x    1 devamderasary    staff               19139 12 Feb 21:39 ./written_2//travel_guides/berlitz2/California-History.txt
+10265605       32 -rwxr-xr-x    1 devamderasary    staff               14266 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Vallarta-History.txt
+10265563       40 -rwxr-xr-x    1 devamderasary    staff               16916 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Budapest-WhatToDo.txt
+10265573       32 -rwxr-xr-x    1 devamderasary    staff               15364 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Cancun-History.txt
+10265603       48 -rwxr-xr-x    1 devamderasary    staff               20609 12 Feb 21:39 ./written_2//travel_guides/berlitz2/PuertoRico-WhatToDo.txt
+10265606       72 -rwxr-xr-x    1 devamderasary    staff               36255 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Vallarta-WhatToDo.txt
+10265547       40 -rwxr-xr-x    1 devamderasary    staff               18112 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bali-WhatToDo.txt
+10265582       24 -rwxr-xr-x    1 devamderasary    staff               11981 12 Feb 21:39 ./written_2//travel_guides/berlitz2/CostaBlanca-History.txt
+10265587       96 -rwxr-xr-x    1 devamderasary    staff               48636 12 Feb 21:39 ./written_2//travel_guides/berlitz2/CstaBlanca-WhereToGo.txt
+10265594       48 -rwxr-xr-x    1 devamderasary    staff               20746 12 Feb 21:39 ./written_2//travel_guides/berlitz2/NewOrleans-History.txt
+10265602       32 -rwxr-xr-x    1 devamderasary    staff               13736 12 Feb 21:39 ./written_2//travel_guides/berlitz2/PuertoRico-History.txt
+10265531       16 -rwxr-xr-x    1 devamderasary    staff                7996 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Algarve-Intro.txt
+10265591       40 -rwxr-xr-x    1 devamderasary    staff               18933 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Nepal-History.txt
+10265576       64 -rwxr-xr-x    1 devamderasary    staff               29333 12 Feb 21:39 ./written_2//travel_guides/berlitz2/China-History.txt
+10265568       96 -rwxr-xr-x    1 devamderasary    staff               46093 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Canada-History.txt
+10265584       32 -rwxr-xr-x    1 devamderasary    staff               15760 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Crete-History.txt
+10265600       40 -rwxr-xr-x    1 devamderasary    staff               17125 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Portugal-WhatToDo.txt
+10265543       24 -rwxr-xr-x    1 devamderasary    staff                9107 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bahamas-Intro.txt
+10265534       32 -rwxr-xr-x    1 devamderasary    staff               15758 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Amsterdam-History.txt
+10265544       40 -rwxr-xr-x    1 devamderasary    staff               19719 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bahamas-WhatToDo.txt
+10265550       40 -rwxr-xr-x    1 devamderasary    staff               19052 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Barcelona-WhatToDo.txt
+10265532       32 -rwxr-xr-x    1 devamderasary    staff               16133 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Algarve-WhatToDo.txt
+10265604      136 -rwxr-xr-x    1 devamderasary    staff               66550 12 Feb 21:39 ./written_2//travel_guides/berlitz2/PuertoRico-WhereToGo.txt
+10265590      152 -rwxr-xr-x    1 devamderasary    staff               76041 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Cuba-WhereToGo.txt
+10265580       32 -rwxr-xr-x    1 devamderasary    staff               14889 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Costa-WhatToDo.txt
+10265552       32 -rwxr-xr-x    1 devamderasary    staff               12702 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Beijing-History.txt
+10265593      112 -rwxr-xr-x    1 devamderasary    staff               53280 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Nepal-WhereToGo.txt
+10265572      152 -rwxr-xr-x    1 devamderasary    staff               76744 12 Feb 21:39 ./written_2//travel_guides/berlitz2/CanaryIslands-WhereToGo.txt
+10265560       32 -rwxr-xr-x    1 devamderasary    staff               15046 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bermuda-history.txt
+10265570       32 -rwxr-xr-x    1 devamderasary    staff               13919 12 Feb 21:39 ./written_2//travel_guides/berlitz2/CanaryIslands-History.txt
+10265535       24 -rwxr-xr-x    1 devamderasary    staff                8765 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Amsterdam-Intro.txt
+10265585       40 -rwxr-xr-x    1 devamderasary    staff               16532 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Crete-WhatToDo.txt
+10265533      136 -rwxr-xr-x    1 devamderasary    staff               69415 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Algarve-WhereToGo.txt
+10265539       24 -rwxr-xr-x    1 devamderasary    staff                8907 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Athens-Intro.txt
+10265530       32 -rwxr-xr-x    1 devamderasary    staff               15389 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Algarve-History.txt
+10265597       40 -rwxr-xr-x    1 devamderasary    staff               20387 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Poland-History.txt
+10265554      128 -rwxr-xr-x    1 devamderasary    staff               63667 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Beijing-WhereToGo.txt
+10265571       32 -rwxr-xr-x    1 devamderasary    staff               15587 12 Feb 21:39 ./written_2//travel_guides/berlitz2/CanaryIslands-WhatToDo.txt
+10265566       32 -rwxr-xr-x    1 devamderasary    staff               16255 12 Feb 21:39 ./written_2//travel_guides/berlitz2/California-WhatToDo.txt
+10265562       32 -rwxr-xr-x    1 devamderasary    staff               12872 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Budapest-History.txt
+10265577       32 -rwxr-xr-x    1 devamderasary    staff               12906 12 Feb 21:39 ./written_2//travel_guides/berlitz2/China-WhatToDo.txt
+10265540       40 -rwxr-xr-x    1 devamderasary    staff               17143 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Athens-WhatToDo.txt
+10265592       80 -rwxr-xr-x    1 devamderasary    staff               40450 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Nepal-WhatToDo.txt
+10265559      120 -rwxr-xr-x    1 devamderasary    staff               60475 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Bermuda-WhereToGo.txt
+10265595       32 -rwxr-xr-x    1 devamderasary    staff               13871 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Paris-WhatToDo.txt
+10265588       24 -rwxr-xr-x    1 devamderasary    staff               11789 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Cuba-History.txt
+10265607      104 -rwxr-xr-x    1 devamderasary    staff               52679 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Vallarta-WhereToGo.txt
+10265553       48 -rwxr-xr-x    1 devamderasary    staff               21838 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Beijing-WhatToDo.txt
+10265575      136 -rwxr-xr-x    1 devamderasary    staff               66453 12 Feb 21:39 ./written_2//travel_guides/berlitz2/Cancun-WhereToGo.txt
+```
+The "ls" option can also be applied on the original directory "./written_2" in order to search recursively through it, as shown in the code block below.
+```
+devamderasary@DEVAMs-MBP docsearch % find ./written_2 -ls
+10265372        0 drwxr-xr-x    4 devamderasary    staff                 128 12 Feb 21:39 ./written_2
+10265373        0 drwxr-xr-x    3 devamderasary    staff                  96 12 Feb 21:39 ./written_2/non-fiction
+10265374        0 drwxr-xr-x    8 devamderasary    staff                 256 12 Feb 21:39 ./written_2/non-fiction/OUP
+10265385        0 drwxr-xr-x    6 devamderasary    staff                 192 12 Feb 21:39 ./written_2/non-fiction/OUP/Berk
+10265388      208 -rwxr-xr-x    1 devamderasary    staff              102942 12 Feb 21:39 ./written_2/non-fiction/OUP/Berk/ch2.txt
+10265387      184 -rwxr-xr-x    1 devamderasary    staff               92355 12 Feb 21:39 ./written_2/non-fiction/OUP/Berk/ch1.txt
+10265386      208 -rwxr-xr-x    1 devamderasary    staff              103491 12 Feb 21:39 ./written_2/non-fiction/OUP/Berk/CH4.txt
+10265389      136 -rwxr-xr-x    1 devamderasary    staff               66887 12 Feb 21:39 ./written_2/non-fiction/OUP/Berk/ch7.txt
+10265375        0 drwxr-xr-x   11 devamderasary    staff                 352 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy
+10265379       88 -rwxr-xr-x    1 devamderasary    staff               44782 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch2.txt
+10265380       72 -rwxr-xr-x    1 devamderasary    staff               35141 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch3.txt
+10265376       96 -rwxr-xr-x    1 devamderasary    staff               46915 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch1.txt
+10265382       88 -rwxr-xr-x    1 devamderasary    staff               42444 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch7.txt
+10265381       88 -rwxr-xr-x    1 devamderasary    staff               42225 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch6.txt
+10265383      104 -rwxr-xr-x    1 devamderasary    staff               52468 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch8.txt
+10265384       64 -rwxr-xr-x    1 devamderasary    staff               31283 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch9.txt
+10265378       88 -rwxr-xr-x    1 devamderasary    staff               43918 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch15.txt
+10265377       80 -rwxr-xr-x    1 devamderasary    staff               39905 12 Feb 21:39 ./written_2/non-fiction/OUP/Abernathy/ch14.txt
+10265422        0 drwxr-xr-x    5 devamderasary    staff                 160 12 Feb 21:39 ./written_2/non-fiction/OUP/Rybczynski
+10265424       80 -rwxr-xr-x    1 devamderasary    staff               38052 12 Feb 21:39 ./written_2/non-fiction/OUP/Rybczynski/ch2.txt
+10265425      104 -rwxr-xr-x    1 devamderasary    staff               52179 12 Feb 21:39 ./written_2/non-fiction/OUP/Rybczynski/ch3.txt
+10265423       72 -rwxr-xr-x    1 devamderasary    staff               34412 12 Feb 21:39 ./written_2/non-fiction/OUP/Rybczynski/ch1.txt
+10265412        0 drwxr-xr-x   11 devamderasary    staff                 352 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman
+10265415      160 -rwxr-xr-x    1 devamderasary    staff               80544 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch3.txt
+10265413      136 -rwxr-xr-x    1 devamderasary    staff               65578 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch1.txt
+10265416      152 -rwxr-xr-x    1 devamderasary    staff               74448 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch4.txt
+10265417       56 -rwxr-xr-x    1 devamderasary    staff               27196 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch5.txt
+10265419      104 -rwxr-xr-x    1 devamderasary    staff               50095 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch7.txt
+10265418      128 -rwxr-xr-x    1 devamderasary    staff               61513 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch6.txt
+10265420      200 -rwxr-xr-x    1 devamderasary    staff               99145 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch8.txt
+10265421      176 -rwxr-xr-x    1 devamderasary    staff               86220 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch9.txt
+10265414      128 -rwxr-xr-x    1 devamderasary    staff               64908 12 Feb 21:39 ./written_2/non-fiction/OUP/Kauffman/ch10.txt
+10265405        0 drwxr-xr-x    8 devamderasary    staff                 256 12 Feb 21:39 ./written_2/non-fiction/OUP/Fletcher
+10265408      104 -rwxr-xr-x    1 devamderasary    staff               51325 12 Feb 21:39 ./written_2/non-fiction/OUP/Fletcher/ch2.txt
+10265406       96 -rwxr-xr-x    1 devamderasary    staff               46376 12 Feb 21:39 ./written_2/non-fiction/OUP/Fletcher/ch1.txt
+10265409       96 -rwxr-xr-x    1 devamderasary    staff               48389 12 Feb 21:39 ./written_2/non-fiction/OUP/Fletcher/ch5.txt
+10265410      136 -rwxr-xr-x    1 devamderasary    staff               68106 12 Feb 21:39 ./written_2/non-fiction/OUP/Fletcher/ch6.txt
+10265411      112 -rwxr-xr-x    1 devamderasary    staff               53257 12 Feb 21:39 ./written_2/non-fiction/OUP/Fletcher/ch9.txt
+10265407       72 -rwxr-xr-x    1 devamderasary    staff               33013 12 Feb 21:39 ./written_2/non-fiction/OUP/Fletcher/ch10.txt
+10265390        0 drwxr-xr-x   16 devamderasary    staff                 512 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro
+10265400       72 -rwxr-xr-x    1 devamderasary    staff               33420 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chR.txt
+10265398       88 -rwxr-xr-x    1 devamderasary    staff               41470 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chP.txt
+10265399       24 -rwxr-xr-x    1 devamderasary    staff                8274 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chQ.txt
+10265392       72 -rwxr-xr-x    1 devamderasary    staff               32819 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chB.txt
+10265393       48 -rwxr-xr-x    1 devamderasary    staff               23635 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chC.txt
+10265391       72 -rwxr-xr-x    1 devamderasary    staff               35675 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chA.txt
+10265401       40 -rwxr-xr-x    1 devamderasary    staff               19909 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chV.txt
+10265402       16 -rwxr-xr-x    1 devamderasary    staff                6724 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chW.txt
+10265395      112 -rwxr-xr-x    1 devamderasary    staff               55410 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chM.txt
+10265404       16 -rwxr-xr-x    1 devamderasary    staff                5431 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chZ.txt
+10265394       48 -rwxr-xr-x    1 devamderasary    staff               24476 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chL.txt
+10265396       24 -rwxr-xr-x    1 devamderasary    staff                9182 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chN.txt
+10265403       16 -rwxr-xr-x    1 devamderasary    staff                5424 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chY.txt
+10265397       24 -rwxr-xr-x    1 devamderasary    staff                8349 12 Feb 21:39 ./written_2/non-fiction/OUP/Castro/chO.txt
+10265426        0 drwxr-xr-x    4 devamderasary    staff                 128 12 Feb 21:39 ./written_2/travel_guides
+10265427        0 drwxr-xr-x  103 devamderasary    staff                3296 12 Feb 21:39 ./written_2/travel_guides/berlitz1
+10265436        8 -rwxr-xr-x    1 devamderasary    staff                1547 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRLasVegas.txt
+10265456       88 -rwxr-xr-x    1 devamderasary    staff               41789 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryJapan.txt
+10265484       24 -rwxr-xr-x    1 devamderasary    staff                8528 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroMalaysia.txt
+10265432        8 -rwxr-xr-x    1 devamderasary    staff                 931 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRIstanbul.txt
+10265455       40 -rwxr-xr-x    1 devamderasary    staff               17168 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryJamaica.txt
+10265433       56 -rwxr-xr-x    1 devamderasary    staff               25434 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRJamaica.txt
+10265429        8 -rwxr-xr-x    1 devamderasary    staff                1193 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRHongKong.txt
+10265444       40 -rwxr-xr-x    1 devamderasary    staff               18298 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryEgypt.txt
+10265465       24 -rwxr-xr-x    1 devamderasary    staff                9427 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroEdinburgh.txt
+10265452       40 -rwxr-xr-x    1 devamderasary    staff               16573 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryIsrael.txt
+10265464       16 -rwxr-xr-x    1 devamderasary    staff                7820 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroDublin.txt
+10265451      112 -rwxr-xr-x    1 devamderasary    staff               54898 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryIndia.txt
+10265468       24 -rwxr-xr-x    1 devamderasary    staff               11010 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroFrance.txt
+10265482       24 -rwxr-xr-x    1 devamderasary    staff                9927 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroMadeira.txt
+10265502       48 -rwxr-xr-x    1 devamderasary    staff               21180 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToLakeDistrict.txt
+10265471       16 -rwxr-xr-x    1 devamderasary    staff                6210 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroIbiza.txt
+10265454       96 -rwxr-xr-x    1 devamderasary    staff               48191 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryItaly.txt
+10265513      160 -rwxr-xr-x    1 devamderasary    staff               80111 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToGreek.txt
+10265523      168 -rwxr-xr-x    1 devamderasary    staff               84671 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToLakeDistrict.txt
+10265442       32 -rwxr-xr-x    1 devamderasary    staff               15962 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryDublin.txt
+10265473       16 -rwxr-xr-x    1 devamderasary    staff                5318 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroIsrael.txt
+10265495       80 -rwxr-xr-x    1 devamderasary    staff               38183 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToIbiza.txt
+10265446       80 -rwxr-xr-x    1 devamderasary    staff               38509 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryFrance.txt
+10265493        8 -rwxr-xr-x    1 devamderasary    staff                2477 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToHawaii.txt
+10265463       32 -rwxr-xr-x    1 devamderasary    staff               13730 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryMallorca.txt
+10265457       40 -rwxr-xr-x    1 devamderasary    staff               18491 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryJerusalem.txt
+10265437        8 -rwxr-xr-x    1 devamderasary    staff                1067 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRLisbon.txt
+10265517      344 -rwxr-xr-x    1 devamderasary    staff              172986 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToIndia.txt
+10265461       32 -rwxr-xr-x    1 devamderasary    staff               12519 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryMadrid.txt
+10265449       32 -rwxr-xr-x    1 devamderasary    staff               14614 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryHongKong.txt
+10265483       24 -rwxr-xr-x    1 devamderasary    staff               11562 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroMadrid.txt
+10265481       16 -rwxr-xr-x    1 devamderasary    staff                6323 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroLosAngeles.txt
+10265453       56 -rwxr-xr-x    1 devamderasary    staff               27099 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryIstanbul.txt
+10265520      576 -rwxr-xr-x    1 devamderasary    staff              294602 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToItaly.txt
+10265459       40 -rwxr-xr-x    1 devamderasary    staff               18968 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryLasVegas.txt
+10265447       40 -rwxr-xr-x    1 devamderasary    staff               18666 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryGreek.txt
+10265441        8 -rwxr-xr-x    1 devamderasary    staff                1445 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRMallorca.txt
+10265486       16 -rwxr-xr-x    1 devamderasary    staff                6818 12 Feb 21:39 ./written_2/travel_guides/berlitz1/JungleMalaysia.txt
+10265505       56 -rwxr-xr-x    1 devamderasary    staff               28497 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToMadeira.txt
+10265490       56 -rwxr-xr-x    1 devamderasary    staff               26623 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToFWI.txt
+10265527      360 -rwxr-xr-x    1 devamderasary    staff              180940 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToMalaysia.txt
+10265506       48 -rwxr-xr-x    1 devamderasary    staff               23497 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToMalaysia.txt
+10265487       48 -rwxr-xr-x    1 devamderasary    staff               20985 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToDublin.txt
+10265521      376 -rwxr-xr-x    1 devamderasary    staff              189061 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToJapan.txt
+10265448       40 -rwxr-xr-x    1 devamderasary    staff               16522 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryHawaii.txt
+10265491        8 -rwxr-xr-x    1 devamderasary    staff                2324 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToFrance.txt
+10265510      168 -rwxr-xr-x    1 devamderasary    staff               85505 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToEgypt.txt
+10265509      160 -rwxr-xr-x    1 devamderasary    staff               79007 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToEdinburgh.txt
+10265497       48 -rwxr-xr-x    1 devamderasary    staff               21343 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToIsrael.txt
+10265438        8 -rwxr-xr-x    1 devamderasary    staff                1254 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRLosAngeles.txt
+10265460       24 -rwxr-xr-x    1 devamderasary    staff               11857 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryMadeira.txt
+10265478       24 -rwxr-xr-x    1 devamderasary    staff               10132 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroJerusalem.txt
+10265439        8 -rwxr-xr-x    1 devamderasary    staff                1433 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRMadeira.txt
+10265518      168 -rwxr-xr-x    1 devamderasary    staff               84424 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToIsrael.txt
+10265430        8 -rwxr-xr-x    1 devamderasary    staff                 675 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRIbiza.txt
+10265512      504 -rwxr-xr-x    1 devamderasary    staff              253959 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToFrance.txt
+10265508      176 -rwxr-xr-x    1 devamderasary    staff               87384 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToDublin.txt
+10265480       24 -rwxr-xr-x    1 devamderasary    staff               11886 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroLasVegas.txt
+10265474       16 -rwxr-xr-x    1 devamderasary    staff                7212 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroIstanbul.txt
+10265528      152 -rwxr-xr-x    1 devamderasary    staff               74270 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToMallorca.txt
+10265507       40 -rwxr-xr-x    1 devamderasary    staff               17417 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToMallorca.txt
+10265470       16 -rwxr-xr-x    1 devamderasary    staff                5784 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroHongKong.txt
+10265467       16 -rwxr-xr-x    1 devamderasary    staff                7684 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroFWI.txt
+10265476       24 -rwxr-xr-x    1 devamderasary    staff               10468 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroJamaica.txt
+10265469       24 -rwxr-xr-x    1 devamderasary    staff                8323 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroGreek.txt
+10265431       56 -rwxr-xr-x    1 devamderasary    staff               25689 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRIsrael.txt
+10265488       48 -rwxr-xr-x    1 devamderasary    staff               21152 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToEdinburgh.txt
+10265525      128 -rwxr-xr-x    1 devamderasary    staff               65176 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToMadeira.txt
+10265492       40 -rwxr-xr-x    1 devamderasary    staff               18503 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToGreek.txt
+10265435        8 -rwxr-xr-x    1 devamderasary    staff                1528 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRLakeDistrict.txt
+10265516       88 -rwxr-xr-x    1 devamderasary    staff               42155 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToIbiza.txt
+10265514        8 -rwxr-xr-x    1 devamderasary    staff                2309 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToHawaii.txt
+10265440       32 -rwxr-xr-x    1 devamderasary    staff               14092 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRMadrid.txt
+10265462       72 -rwxr-xr-x    1 devamderasary    staff               35725 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryMalaysia.txt
+10265475       32 -rwxr-xr-x    1 devamderasary    staff               12345 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroItaly.txt
+10265496       40 -rwxr-xr-x    1 devamderasary    staff               18898 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToIndia.txt
+10265524      160 -rwxr-xr-x    1 devamderasary    staff               77840 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToLosAngeles.txt
+10265434        8 -rwxr-xr-x    1 devamderasary    staff                1446 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRJerusalem.txt
+10265450       32 -rwxr-xr-x    1 devamderasary    staff               12703 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryIbiza.txt
+10265443       48 -rwxr-xr-x    1 devamderasary    staff               21027 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryEdinburgh.txt
+10265445       32 -rwxr-xr-x    1 devamderasary    staff               15011 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryFWI.txt
+10265472       56 -rwxr-xr-x    1 devamderasary    staff               26436 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroIndia.txt
+10265499       48 -rwxr-xr-x    1 devamderasary    staff               22430 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToItaly.txt
+10265458       32 -rwxr-xr-x    1 devamderasary    staff               13596 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HistoryLakeDistrict.txt
+10265526      160 -rwxr-xr-x    1 devamderasary    staff               78028 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToMadrid.txt
+10265522      152 -rwxr-xr-x    1 devamderasary    staff               76530 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToJerusalem.txt
+10265466       16 -rwxr-xr-x    1 devamderasary    staff                7989 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroEgypt.txt
+10265428       32 -rwxr-xr-x    1 devamderasary    staff               16271 12 Feb 21:39 ./written_2/travel_guides/berlitz1/HandRHawaii.txt
+10265501       72 -rwxr-xr-x    1 devamderasary    staff               35438 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToJapan.txt
+10265500      176 -rwxr-xr-x    1 devamderasary    staff               86290 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToJamaica.txt
+10265479       24 -rwxr-xr-x    1 devamderasary    staff               11857 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroLakeDistrict.txt
+10265485       24 -rwxr-xr-x    1 devamderasary    staff                9291 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroMallorca.txt
+10265494       56 -rwxr-xr-x    1 devamderasary    staff               24756 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToHongKong.txt
+10265489       48 -rwxr-xr-x    1 devamderasary    staff               21659 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToEgypt.txt
+10265515      136 -rwxr-xr-x    1 devamderasary    staff               67601 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToHongKong.txt
+10265511      128 -rwxr-xr-x    1 devamderasary    staff               64916 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToFWI.txt
+10265498       56 -rwxr-xr-x    1 devamderasary    staff               26999 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToIstanbul.txt
+10265519      176 -rwxr-xr-x    1 devamderasary    staff               88932 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhereToIstanbul.txt
+10265477       40 -rwxr-xr-x    1 devamderasary    staff               19138 12 Feb 21:39 ./written_2/travel_guides/berlitz1/IntroJapan.txt
+10265503       96 -rwxr-xr-x    1 devamderasary    staff               48170 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToLasVegas.txt
+10265504       48 -rwxr-xr-x    1 devamderasary    staff               24076 12 Feb 21:39 ./written_2/travel_guides/berlitz1/WhatToLosAngeles.txt
+10265529        0 drwxr-xr-x   79 devamderasary    staff                2528 13 Feb 23:06 ./written_2/travel_guides/berlitz2
+10265599       32 -rwxr-xr-x    1 devamderasary    staff               14604 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Portugal-History.txt
+10265557      144 -rwxr-xr-x    1 devamderasary    staff               69890 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Berlin-WhereToGo.txt
+10265579       32 -rwxr-xr-x    1 devamderasary    staff               16143 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Costa-History.txt
+10265537      120 -rwxr-xr-x    1 devamderasary    staff               58911 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Amsterdam-WhereToGo.txt
+10265581      144 -rwxr-xr-x    1 devamderasary    staff               73708 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Costa-WhereToGo.txt
+10265536       32 -rwxr-xr-x    1 devamderasary    staff               16133 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Amsterdam-WhatToDo.txt
+10265583       64 -rwxr-xr-x    1 devamderasary    staff               30453 12 Feb 21:39 ./written_2/travel_guides/berlitz2/CostaBlanca-WhatToDo.txt
+10265549       32 -rwxr-xr-x    1 devamderasary    staff               13127 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Barcelona-History.txt
+10265601      240 -rwxr-xr-x    1 devamderasary    staff              119651 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Portugal-WhereToGo.txt
+10265561      144 -rwxr-xr-x    1 devamderasary    staff               73074 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Boston-WhereToGo.txt
+10265598       40 -rwxr-xr-x    1 devamderasary    staff               19408 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Poland-WhatToDo.txt
+10265567      144 -rwxr-xr-x    1 devamderasary    staff               73702 12 Feb 21:39 ./written_2/travel_guides/berlitz2/California-WhereToGo.txt
+10265589       40 -rwxr-xr-x    1 devamderasary    staff               17210 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Cuba-WhatToDo.txt
+10265555       48 -rwxr-xr-x    1 devamderasary    staff               22126 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Berlin-History.txt
+10265545      144 -rwxr-xr-x    1 devamderasary    staff               73435 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bahamas-WhereToGo.txt
+10265574       40 -rwxr-xr-x    1 devamderasary    staff               18673 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Cancun-WhatToDo.txt
+10265546       40 -rwxr-xr-x    1 devamderasary    staff               16431 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bali-History.txt
+10265586      160 -rwxr-xr-x    1 devamderasary    staff               81548 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Crete-WhereToGo.txt
+10265538       48 -rwxr-xr-x    1 devamderasary    staff               20481 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Athens-History.txt
+10265556       32 -rwxr-xr-x    1 devamderasary    staff               14688 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Berlin-WhatToDo.txt
+10265569      464 -rwxr-xr-x    1 devamderasary    staff              235947 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Canada-WhereToGo.txt
+10265548      160 -rwxr-xr-x    1 devamderasary    staff               78053 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bali-WhereToGo.txt
+10265564      144 -rwxr-xr-x    1 devamderasary    staff               73535 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Budapest-WhereoGo.txt
+10265551      144 -rwxr-xr-x    1 devamderasary    staff               72769 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Barcelona-WhereToGo.txt
+10265541      144 -rwxr-xr-x    1 devamderasary    staff               71349 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Athens-WhereToGo.txt
+10265596      144 -rwxr-xr-x    1 devamderasary    staff               73204 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Paris-WhereToGo.txt
+10265578      392 -rwxr-xr-x    1 devamderasary    staff              198080 12 Feb 21:39 ./written_2/travel_guides/berlitz2/China-WhereToGo.txt
+10265558       48 -rwxr-xr-x    1 devamderasary    staff               22386 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bermuda-WhatToDo.txt
+10265565       40 -rwxr-xr-x    1 devamderasary    staff               19139 12 Feb 21:39 ./written_2/travel_guides/berlitz2/California-History.txt
+10265605       32 -rwxr-xr-x    1 devamderasary    staff               14266 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Vallarta-History.txt
+10265563       40 -rwxr-xr-x    1 devamderasary    staff               16916 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Budapest-WhatToDo.txt
+10265573       32 -rwxr-xr-x    1 devamderasary    staff               15364 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Cancun-History.txt
+10265603       48 -rwxr-xr-x    1 devamderasary    staff               20609 12 Feb 21:39 ./written_2/travel_guides/berlitz2/PuertoRico-WhatToDo.txt
+10265606       72 -rwxr-xr-x    1 devamderasary    staff               36255 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Vallarta-WhatToDo.txt
+10265547       40 -rwxr-xr-x    1 devamderasary    staff               18112 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bali-WhatToDo.txt
+10265582       24 -rwxr-xr-x    1 devamderasary    staff               11981 12 Feb 21:39 ./written_2/travel_guides/berlitz2/CostaBlanca-History.txt
+10265587       96 -rwxr-xr-x    1 devamderasary    staff               48636 12 Feb 21:39 ./written_2/travel_guides/berlitz2/CstaBlanca-WhereToGo.txt
+10265594       48 -rwxr-xr-x    1 devamderasary    staff               20746 12 Feb 21:39 ./written_2/travel_guides/berlitz2/NewOrleans-History.txt
+10265602       32 -rwxr-xr-x    1 devamderasary    staff               13736 12 Feb 21:39 ./written_2/travel_guides/berlitz2/PuertoRico-History.txt
+10265531       16 -rwxr-xr-x    1 devamderasary    staff                7996 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Algarve-Intro.txt
+10265591       40 -rwxr-xr-x    1 devamderasary    staff               18933 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Nepal-History.txt
+10265576       64 -rwxr-xr-x    1 devamderasary    staff               29333 12 Feb 21:39 ./written_2/travel_guides/berlitz2/China-History.txt
+10265568       96 -rwxr-xr-x    1 devamderasary    staff               46093 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Canada-History.txt
+10265584       32 -rwxr-xr-x    1 devamderasary    staff               15760 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Crete-History.txt
+10265600       40 -rwxr-xr-x    1 devamderasary    staff               17125 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Portugal-WhatToDo.txt
+10265543       24 -rwxr-xr-x    1 devamderasary    staff                9107 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bahamas-Intro.txt
+10265534       32 -rwxr-xr-x    1 devamderasary    staff               15758 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Amsterdam-History.txt
+10265544       40 -rwxr-xr-x    1 devamderasary    staff               19719 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bahamas-WhatToDo.txt
+10265550       40 -rwxr-xr-x    1 devamderasary    staff               19052 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Barcelona-WhatToDo.txt
+10265532       32 -rwxr-xr-x    1 devamderasary    staff               16133 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Algarve-WhatToDo.txt
+10265604      136 -rwxr-xr-x    1 devamderasary    staff               66550 12 Feb 21:39 ./written_2/travel_guides/berlitz2/PuertoRico-WhereToGo.txt
+10265590      152 -rwxr-xr-x    1 devamderasary    staff               76041 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Cuba-WhereToGo.txt
+10265580       32 -rwxr-xr-x    1 devamderasary    staff               14889 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Costa-WhatToDo.txt
+10265552       32 -rwxr-xr-x    1 devamderasary    staff               12702 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Beijing-History.txt
+10265593      112 -rwxr-xr-x    1 devamderasary    staff               53280 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Nepal-WhereToGo.txt
+10265572      152 -rwxr-xr-x    1 devamderasary    staff               76744 12 Feb 21:39 ./written_2/travel_guides/berlitz2/CanaryIslands-WhereToGo.txt
+10265560       32 -rwxr-xr-x    1 devamderasary    staff               15046 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bermuda-history.txt
+10265570       32 -rwxr-xr-x    1 devamderasary    staff               13919 12 Feb 21:39 ./written_2/travel_guides/berlitz2/CanaryIslands-History.txt
+10265535       24 -rwxr-xr-x    1 devamderasary    staff                8765 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Amsterdam-Intro.txt
+10265585       40 -rwxr-xr-x    1 devamderasary    staff               16532 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Crete-WhatToDo.txt
+10265533      136 -rwxr-xr-x    1 devamderasary    staff               69415 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Algarve-WhereToGo.txt
+10265539       24 -rwxr-xr-x    1 devamderasary    staff                8907 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Athens-Intro.txt
+10265530       32 -rwxr-xr-x    1 devamderasary    staff               15389 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Algarve-History.txt
+10265597       40 -rwxr-xr-x    1 devamderasary    staff               20387 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Poland-History.txt
+10265554      128 -rwxr-xr-x    1 devamderasary    staff               63667 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Beijing-WhereToGo.txt
+10265571       32 -rwxr-xr-x    1 devamderasary    staff               15587 12 Feb 21:39 ./written_2/travel_guides/berlitz2/CanaryIslands-WhatToDo.txt
+10265566       32 -rwxr-xr-x    1 devamderasary    staff               16255 12 Feb 21:39 ./written_2/travel_guides/berlitz2/California-WhatToDo.txt
+10265562       32 -rwxr-xr-x    1 devamderasary    staff               12872 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Budapest-History.txt
+10265577       32 -rwxr-xr-x    1 devamderasary    staff               12906 12 Feb 21:39 ./written_2/travel_guides/berlitz2/China-WhatToDo.txt
+10265540       40 -rwxr-xr-x    1 devamderasary    staff               17143 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Athens-WhatToDo.txt
+10265592       80 -rwxr-xr-x    1 devamderasary    staff               40450 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Nepal-WhatToDo.txt
+10265559      120 -rwxr-xr-x    1 devamderasary    staff               60475 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Bermuda-WhereToGo.txt
+10265595       32 -rwxr-xr-x    1 devamderasary    staff               13871 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Paris-WhatToDo.txt
+10265588       24 -rwxr-xr-x    1 devamderasary    staff               11789 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Cuba-History.txt
+10265607      104 -rwxr-xr-x    1 devamderasary    staff               52679 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Vallarta-WhereToGo.txt
+10265553       48 -rwxr-xr-x    1 devamderasary    staff               21838 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Beijing-WhatToDo.txt
+10265575      136 -rwxr-xr-x    1 devamderasary    staff               66453 12 Feb 21:39 ./written_2/travel_guides/berlitz2/Cancun-WhereToGo.txt
+```
+URL of source- https://www.redhat.com/sysadmin/linux-find-command#:~:text=As%20its%20name%20implies%2C%20find,the%20Linux%20commands%20cheat%20sheet.%20%5D
+
