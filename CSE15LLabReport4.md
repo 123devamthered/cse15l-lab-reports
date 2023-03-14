@@ -42,7 +42,7 @@ In order to run the Junit tests again, I just used the `<up>` key to access the 
 
 Keys pressed: "git" `<tab>` "add" `<tab>` "ListExamples.java" `<enter>` "git" `<tab>` "commit" `<tab>` "-m" `<tab>` ""x"" `<enter>` "git" `<tab>` "push" `<tab>` "origin" `<tab>` "main"  `<enter>`
 
-In order to push the changes made to the "ListExamples.java" file, I used the " add", "commit", and "push" commands.
+In order to commit and push the changes made to my Github account, I used the "git add", "git commit", and "git push" commands. The "git add" method is used so that I can include the changes I made in the "ListExamples.java" file in the next "commit" command. The "git commit" command is used to save the changes made to the local repository. Lastly, the "git push" command uploads the updated content of the repository.
 ![image](https://user-images.githubusercontent.com/122566208/224887064-c4e4b7c5-29ab-4b3d-9e17-b4f0ede57a6d.png)
 
 
