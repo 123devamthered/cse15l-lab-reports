@@ -18,7 +18,6 @@ To clone my fork of the lab 7 repository, I had to type in the words "git" and "
 
 Keys pressed: `<command + c>` `<command + v>` `<up>` `<enter>`
 
-![image](https://user-images.githubusercontent.com/122566208/221782721-43f41c5d-c50d-468d-9a7f-1e22d9f8aa50.png)
 
 
 In order to run the Junit tests, I had to copy and paste the `javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java` command into the terminal using `<command + c>` `<command + v>`. Furthermore, in order to access the `java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ` command from the command above I used the `<up>` command.
@@ -36,5 +35,10 @@ In order to access the java file "ListExamples.java", I need to enter the "nano"
 
 Keys pressed: `<up>` `<up>` `<enter>` `<up>`  `<up>`  `<up>` `<enter>` 
 
-In order to run the Junit tests again, I just used the `<up>` key to access the commands used to compile and run the Junit tests previously.
+In order to run the Junit tests again, I just used the `<up>` key to access the commands used to compile and run the Junit tests previously. The compile command given by `javac -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar *.java` was accessed first using the `<up>` key. Thereafter, the tests were run using the `java -cp .:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore ` command which was also accessed using the `<up>` key.
+![image](https://user-images.githubusercontent.com/122566208/224869267-002712b4-7d04-4501-b18d-c19f3e15bedd.png)
+
+5.) Commit and push the resulting change to your Github account
+
+Keys pressed: 
 
