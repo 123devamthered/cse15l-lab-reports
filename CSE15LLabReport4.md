@@ -40,5 +40,9 @@ In order to run the Junit tests again, I just used the `<up>` key to access the 
 
 5.) Commit and push the resulting change to your Github account
 
-Keys pressed: 
+Keys pressed: "git" `<tab>` "add" `<tab>` "ListExamples.java" `<enter>` "git" `<tab>` "commit" `<tab>` "-m" `<tab>` ""x"" `<enter>` "git" `<tab>` "push" `<tab>` "origin" `<tab>` "main"  `<enter>`
+
+In order to push the changes made to the "ListExamples.java" file, I used the " add", "commit", and "push" commands.
+![image](https://user-images.githubusercontent.com/122566208/224887064-c4e4b7c5-29ab-4b3d-9e17-b4f0ede57a6d.png)
+
 
